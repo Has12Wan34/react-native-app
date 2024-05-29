@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
-import AttractionCard from './AttractionCard';
+import AttractionCard from './src/components/AttractionCard';
 import { NavigationProp } from '@react-navigation/native';
 
 interface Attraction {

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
-import { ScrollView } from 'react-native';
-import AttractionCard from './AttractionCard';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import AttractionCard from '../components/AttractionCard';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type RootStackParamList = {
@@ -42,15 +41,26 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
   return (
     <ScrollView>
-      {attractions?.map((v:Attraction) => (
-        <AttractionCard 
-          navigation={navigation} 
-          key={v.id} 
-          attraction={v} 
-        />
-      ))}
+       <View style={styles.container}>
+        {attractions?.map((v:Attraction) => (
+          <AttractionCard 
+            navigation={navigation} 
+            key={v.id} 
+            attraction={v} 
+          />
+        ))}
+        </View>
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: "auto",
+    width: 400,
+    flexDirection: "row",
+    flexWrap: "wrap"
+  },
+});
 
 export default HomeScreen;
