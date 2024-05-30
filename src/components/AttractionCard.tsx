@@ -22,11 +22,11 @@ const AttractionCard: React.FC<AttractionCardProps> = (props) => {
   const theme = useTheme();
   return (
     <Card style={{...styles.item, backgroundColor: theme?.colors.primary}}>
-      {/* <Card.Content>
+      <Card.Content>
         <Title>{props.attraction.id}</Title>
-      </Card.Content> */}
-      {/* <Image
-        style={{ width: 100, height: 50 }}
+      </Card.Content>
+      <Image
+        style={{ width: 100, height: 100 }}
         source={{
           uri:
             "https://reactjs.org/logo-og.png"
@@ -34,7 +34,7 @@ const AttractionCard: React.FC<AttractionCardProps> = (props) => {
       />
       <Card.Content>
         <Paragraph numberOfLines={2}>{props.attraction.title}</Paragraph>
-      </Card.Content> */}
+      </Card.Content>
       <Card.Actions>
         <Button 
           onPress={() => props.navigation.navigate('Details', {
@@ -51,8 +51,7 @@ const AttractionCard: React.FC<AttractionCardProps> = (props) => {
 const styles = StyleSheet.create({
   item: {
     flex: 1,
-    minWidth: 100,
-    maxWidth: 'auto',
+    height: '100%',
     justifyContent: "center",
     alignItems: "center",
     padding: 10,

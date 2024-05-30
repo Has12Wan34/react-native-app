@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 import { Card, Title, Paragraph, Button } from 'react-native-paper';
-import { RouteProp } from '@react-navigation/native';
+import { NavigationProp, RouteProp } from '@react-navigation/native';
 import { Appbar, Menu, useTheme, TouchableRipple, Switch } from 'react-native-paper';
 
 interface Attraction {
@@ -12,11 +12,12 @@ interface Attraction {
     thumbnailUrl: string;
   }
 
-interface Props {
-  route?: RouteProp<{ params: { id: string } | undefined }, 'params'>;
-}
+  interface Props {
+    route?: RouteProp<{ params: { id: string } | undefined }, 'params'>;
+    navigation?: NavigationProp<any, any>;
+  }
 
-const AttractionDetails: React.FC<Props> = ({ route }) => {
+const AttractionDetails: React.FC<Props> = ({ route, navigation }) => {
 
   const theme = useTheme();
   const [attraction, setAttraction] = React.useState<Attraction>();
@@ -45,6 +46,8 @@ const AttractionDetails: React.FC<Props> = ({ route }) => {
           <Card.Content>
             <Paragraph>{attraction?.title}</Paragraph>
           </Card.Content>
+          <Button
+            onPress={() => navigation?.navigate('MyModal')}>Open Modal</Button>
         </Card>
       </View>
     );

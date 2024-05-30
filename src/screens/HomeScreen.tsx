@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: "auto",
     width: 400,
-    flexDirection: "row",
-    flexWrap: "wrap"
+    // flexDirection: "row",
+    // flexWrap: "wrap"
   },
 });
 

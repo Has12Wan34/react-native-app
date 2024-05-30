@@ -8,6 +8,7 @@ import { useState, useCallback, useMemo } from 'react';
 import LoginScreen from './src/screens/Login';
 import CustomNavigationBar from './src/components/Appbar';
 import { PreferencesContext } from './src/service/PreferencesContext';
+import { ModalScreen } from './src/components/ModalScreen';
 
 interface AuthContextType {
   username: string;
@@ -56,6 +57,7 @@ type RootStackNavigatorParamsList = {
   Home: undefined;
   Details: undefined;
   Signin: undefined;
+  MyModal: undefined;
 };
 
 const Stack = createStackNavigator<RootStackNavigatorParamsList>();
@@ -99,6 +101,9 @@ function App() {
               <Stack.Screen name="Details" component={AttractionDetails} />
             {/* </>
           )} */}
+          <Stack.Group screenOptions={{ presentation: 'modal' }}>
+            <Stack.Screen name="MyModal" component={ModalScreen} />
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
