@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Card, Title, Paragraph, Button } from 'react-native-paper';
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 import { Appbar, Menu, useTheme, TouchableRipple, Switch } from 'react-native-paper';
@@ -53,7 +53,10 @@ const AttractionDetails: React.FC<Props> = ({ route, navigation }) => {
     );
   } else {
     return (
-      <Title>Loading</Title>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Title>Loading, please wait...</Title>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
     )
   }
 };

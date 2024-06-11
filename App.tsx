@@ -9,6 +9,7 @@ import LoginScreen from './src/screens/Login';
 import CustomNavigationBar from './src/components/Appbar';
 import { PreferencesContext } from './src/service/PreferencesContext';
 import { ModalScreen } from './src/components/ModalScreen';
+import SecureScreen from './src/screens/SecureScreen';
 
 interface AuthContextType {
   username: string;
@@ -58,6 +59,7 @@ type RootStackNavigatorParamsList = {
   Details: undefined;
   Signin: undefined;
   MyModal: undefined;
+  Secure: undefined;
 };
 
 const Stack = createStackNavigator<RootStackNavigatorParamsList>();
@@ -80,7 +82,6 @@ function App() {
     [toggleTheme, isThemeDark]
   );
 
-
   return (
     <PreferencesContext.Provider value={preferences}>
       <PaperProvider theme={theme}>
@@ -99,6 +100,7 @@ function App() {
             <> */}
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Details" component={AttractionDetails} />
+              <Stack.Screen name="Secure" component={SecureScreen} />
             {/* </>
           )} */}
           <Stack.Group screenOptions={{ presentation: 'modal' }}>

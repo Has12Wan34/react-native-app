@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, Pressable, Text } from 'react-native';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 import { NavigationProp } from '@react-navigation/native';
 import { Appbar, Menu, useTheme, TouchableRipple, Switch } from 'react-native-paper';
@@ -11,7 +11,6 @@ interface Attraction {
     url: string;
     thumbnailUrl: string;
   }
-
 
 interface AttractionCardProps {
   attraction: Attraction;
@@ -33,16 +32,16 @@ const AttractionCard: React.FC<AttractionCardProps> = (props) => {
         }}
       />
       <Card.Content>
-        <Paragraph numberOfLines={2}>{props.attraction.title}</Paragraph>
+        <Paragraph numberOfLines={2} style={styles.text}>{props.attraction.title}</Paragraph>
       </Card.Content>
       <Card.Actions>
-        <Button 
+        <Pressable 
+          style={styles.button} 
           onPress={() => props.navigation.navigate('Details', {
             id: props.attraction.id
-          })}
-        >
-          See More
-        </Button>
+          })}>
+          <Text style={styles.button_text}>See More</Text>
+        </Pressable>
       </Card.Actions>
     </Card>
   );
@@ -54,10 +53,31 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
     backgroundColor: "rgba(249, 180, 45, 0.25)",
     borderWidth: 1.5,
     borderColor: "#fff"
+  },
+  text: {
+    fontSize: 20,
+    color: 'blue',
+    textAlign: 'center',
+    fontFamily: 'Arial',
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  },
+  button_text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
 

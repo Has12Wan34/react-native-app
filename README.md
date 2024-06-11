@@ -1,79 +1,19 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# สรุปเนื้อหา
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### เบื้องต้น
+- React Native: เครื่องมือที่สามารถ Build Mobile Application ทั้ง iOS และ Android โดยใช้ JavaScript และ React เป็นหลักในการพัฒนา
+- Expo เป็น SDK ชุดหนึ่งที่เข้ามาช่วยให้การพัฒนา App ด้วย react-native ไม่ต้องเข้ามาจัดการเขียน Native Module และมีการพ่วงมาด้วย Expo XDE/ exp CLI ช่วยในการดู log การทำงานต่างๆ, การทดสอบ App ผ่านอุปกรณ์จริงโดยไม่ต้องใช้สายเชื่อมนั่นเอง
+### การติดตั้ง Tools
+- React Native CLI 
+>เป็นแพ็คเกจที่มีเครื่องมือและยูทิลิตี้สำหรับโครงการ React Native มักเป็นที่ต้องการของนักพัฒนาที่ต้องการการควบคุมเพิ่มเติมสำหรับกระบวนการพัฒนาและการสร้าง และผู้ที่ทำงานกับแอปพลิเคชันที่ซับซ้อน 
 
-## Step 1: Start the Metro Server
+>ก่อนที่คุณจะเริ่มใช้ React Native CLI ได้ คุณจะต้องตั้งค่าสภาพแวดล้อมของคุณก่อน ซึ่งหมายถึงการติดตั้ง Node.js, Java Development Kit (JDK) และ Android Studio สำหรับการพัฒนา Android หรือ Xcode สำหรับการพัฒนา iOS หลังจากตั้งค่าเหล่านี้แล้ว คุณสามารถติดตั้ง CLI โดยใช้ npm ด้วยคำnpm install -g react-native-cliสั่ง
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Expo CLI
+> เป็น toolchain โอเพ่นซอร์สฟรีที่สร้างขึ้นโดยใช้ React Native ช่วยให้กระบวนการเริ่มต้นแอปพลิเคชัน React Native ใหม่ง่ายขึ้น มีชุดเครื่องมือและบริการที่ช่วยให้นักพัฒนาสร้าง ปรับใช้ และทำซ้ำได้อย่างรวดเร็วบน iOS, Android และเว็บแอป
 
-To start Metro, run the following command from the _root_ of your React Native project:
+> การเริ่มต้นใช้งาน Expo นั้นค่อนข้างตรงไปตรงมา เมื่อคุณติดตั้ง Node.js แล้ว คุณสามารถติดตั้ง Expo CLI ด้วยคำnpm install -g expo-cliสั่ง หลังจากนั้น การสร้างโครงการใหม่ก็ง่ายเหมือนการเรียกexpo initใช้
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Secure
+    - `react-native-keychain` เป็นหนึ่งในไลบรารีที่ใช้สำหรับ React Native ซึ่งช่วยในการจัดการข้อมูลคีย์และการรักษาความปลอดภัยของข้อมูลบนอุปกรณ์ เซฟคีย์จะเก็บข้อมูลไว้ในระบบ Keychain ของ iOS หรือ Keystore ของ Android ทำให้ข้อมูลเป็นปลอดภัยและไม่สามารถเข้าถึงได้โดยตรงจากแอปพลิเคชันอื่น

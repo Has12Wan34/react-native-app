@@ -42,10 +42,8 @@ const CustomNavigationBar: React.FC<CustomNavigationBarProps> = ({
             />
           }>
           <Menu.Item
-            onPress={() => {
-              console.log('Option 1 was pressed');
-            }}
-            title="Option 1"
+            onPress={() => navigation.navigate('Secure')}
+            title="Secure"
           />
           <Menu.Item
             onPress={() => {
